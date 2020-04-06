@@ -1,5 +1,4 @@
-# This is fork of 
-# [ArduinoProgrammableSoundGenerator](https://github.com/Benjamin-Lapointe-Pinel/ArduinoProgrammableSoundGenerator)
+# This is fork of [ArduinoProgrammableSoundGenerator](https://github.com/Benjamin-Lapointe-Pinel/ArduinoProgrammableSoundGenerator)
 An Arduino NES inspired multichannel sounds generator library.
 
 # My modifications
