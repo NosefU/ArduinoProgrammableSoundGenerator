@@ -1,6 +1,8 @@
 # This is fork of [ArduinoProgrammableSoundGenerator](https://github.com/Benjamin-Lapointe-Pinel/ArduinoProgrammableSoundGenerator)
 An Arduino NES inspired multichannel sounds generator library.
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=bedD4nGP4NM" target="_blank"><img src="http://img.youtube.com/vi/bedD4nGP4NM/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
 # My modifications
 * the use of progmem for storing melodies has been greatly optimized; 
 * it's now possible to apply a smooth fading of notes to each track;
