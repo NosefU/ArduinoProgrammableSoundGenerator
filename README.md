@@ -1,5 +1,29 @@
-# ArduinoProgrammableSoundGenerator
+# This is fork of 
+# [ArduinoProgrammableSoundGenerator](https://github.com/Benjamin-Lapointe-Pinel/ArduinoProgrammableSoundGenerator)
 An Arduino NES inspired multichannel sounds generator library.
+
+# My modifications
+* the use of progmem for storing melodies has been greatly optimized; 
+* it's now possible to apply a smooth fading of notes to each track;
+* bonus: dynamic led indication for each channel.
+
+Besides, I wrote python script that converts specially prepared midi files to melody arrays. Unfortunately, at the moment the delays have to be selected manually.
+
+# How to prepare midi file
+5 simple rules:
+  * one note at one time for each track. No overlaps
+  * minimal note length - 1/32
+  * two identical notes running in a row on the same channel will sound like one long note
+  * midi file must be contain 5 tracks
+  * track with drums must be named "Drums"
+
+I recommend to use multiplatform midi editor Aria Maestosa.
+
+# How to use converter script
+```
+python mididump_v2.py <midi file> -old_method
+```
+
 # How to use it
 Plug a speaker to pin 3, then init the sound generator in the setup function.
 ```

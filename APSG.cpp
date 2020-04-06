@@ -15,12 +15,26 @@ oscillator triangle;
 oscillator sawtooth;
 oscillator noise;
 oscillator sample;
+//oscillator *channels[NUMBER_OF_CHANNELS] =
+//{
+//  &squares[0],
+//  &squares[1],
+//  &triangle,
+//  &sawtooth,
+//  &noise,
+//  &sample
+//};
+
+
+
 oscillator *channels[NUMBER_OF_CHANNELS] =
 {
-  &squares[0],
-  &squares[1],
+
   &triangle,
   &sawtooth,
+  &squares[0],
+  &squares[1],
+  
   &noise,
   &sample
 };
@@ -94,56 +108,96 @@ void init_square_oscillator(struct oscillator& o)
 
 void init_triangle_oscillator(struct oscillator& o)
 {
-  o.sample_length = 16;
+  o.sample_length = 8; //16;
   o.sample_speed = SAMPLE_SPEED(o.sample_length);
   o.sample = new uint8_t[o.sample_length];
   o.sample_length--;
 
-  o.sample[0]   = 6;
-  o.sample[1]   = 12;
-  o.sample[2]   = 18;
-  o.sample[3]   = 24;
-  o.sample[4]   = 30;
-  o.sample[5]   = 36;
-  o.sample[6]   = 42;
-  o.sample[7]   = 48;
-  o.sample[8]   = 42;
-  o.sample[9]   = 36;
-  o.sample[10]  = 30;
-  o.sample[11]  = 24;
-  o.sample[12]  = 18;
-  o.sample[13]  = 12;
-  o.sample[14]  = 6;
-  o.sample[15]  = 0;
+//  o.sample[0]   = 6;
+//  o.sample[1]   = 12;
+//  o.sample[2]   = 18;
+//  o.sample[3]   = 24;
+//  o.sample[4]   = 30;
+//  o.sample[5]   = 36;
+//  o.sample[6]   = 42;
+//  o.sample[7]   = 48;
+//  o.sample[8]   = 42;
+//  o.sample[9]   = 36;
+//  o.sample[10]  = 30;
+//  o.sample[11]  = 24;
+//  o.sample[12]  = 18;
+//  o.sample[13]  = 12;
+//  o.sample[14]  = 6;
+//  o.sample[15]  = 0;
+
+//  o.sample[0]   = 12;
+//  o.sample[1]   = 24;
+//  o.sample[2]   = 36;
+//  o.sample[3]   = 48;
+//  o.sample[4]   = 36;
+//  o.sample[5]  = 24;
+//  o.sample[6]  = 12;
+//  o.sample[7]  = 0;
+
+  int triangleVolume = 2;
+  
+  o.sample[0]   = 3 * triangleVolume;
+  o.sample[1]   = 3 * triangleVolume * 2;
+  o.sample[2]   = 3 * triangleVolume * 3;
+  o.sample[3]   = 3 * triangleVolume * 4;
+  o.sample[4]   = 3 * triangleVolume * 3;
+  o.sample[5]   = 3 * triangleVolume * 2;
+  o.sample[6]   = 3 * triangleVolume;
+  o.sample[7]   = 0;
 }
 
 void init_sawtooth_oscillator(struct oscillator& o)
 {
-  o.sample_length = 16;
+  o.sample_length = 8; //16;
   o.sample_speed = SAMPLE_SPEED(o.sample_length);
   o.sample = new uint8_t[o.sample_length];
   o.sample_length--;
   
+//  o.sample[0]   = 0;
+//  o.sample[1]   = 1;
+//  o.sample[2]   = 2;
+//  o.sample[3]   = 3;
+//  o.sample[4]   = 4;
+//  o.sample[5]   = 5;
+//  o.sample[6]   = 6;
+//  o.sample[7]   = 7;
+//  o.sample[8]   = 8;
+//  o.sample[9]   = 9;
+//  o.sample[10]  = 10;
+//  o.sample[11]  = 11;
+//  o.sample[12]  = 12;
+//  o.sample[13]  = 13;
+//  o.sample[14]  = 14;
+//  o.sample[15]  = 15;
+
+//  o.sample[0]   = 0;
+//  o.sample[1]   = 3;
+//  o.sample[2]   = 5;
+//  o.sample[3]   = 7;
+//  o.sample[4]   = 9;
+//  o.sample[5]  = 11;
+//  o.sample[6]  = 13;
+//  o.sample[7]  = 15;
+
+  int sawtoothVolume = 1;
   o.sample[0]   = 0;
-  o.sample[1]   = 1;
-  o.sample[2]   = 2;
-  o.sample[3]   = 3;
-  o.sample[4]   = 4;
-  o.sample[5]   = 5;
-  o.sample[6]   = 6;
-  o.sample[7]   = 7;
-  o.sample[8]   = 8;
-  o.sample[9]   = 9;
-  o.sample[10]  = 10;
-  o.sample[11]  = 11;
-  o.sample[12]  = 12;
-  o.sample[13]  = 13;
-  o.sample[14]  = 14;
-  o.sample[15]  = 15;
+  o.sample[1]   = round(sawtoothVolume * 1.5);
+  o.sample[2]   = o.sample[1] + round(sawtoothVolume * 1.6);
+  o.sample[3]   = o.sample[2] + round(sawtoothVolume * 1.6);
+  o.sample[4]   = o.sample[3] + round(sawtoothVolume * 1.6);
+  o.sample[5]   = o.sample[4] + round(sawtoothVolume * 1.6);
+  o.sample[6]   = o.sample[5] + round(sawtoothVolume * 1.6);
+  o.sample[7]   = o.sample[6] + round(sawtoothVolume * 1.6);
 }
 
 void init_noise_oscillator(struct oscillator& o)
 {  
+  //o.volume = 30;
   o.sample_length = 1;
   o.sample_speed = 256;
   o.sample = new uint8_t[o.sample_length];
@@ -270,13 +324,3 @@ bool update_channel(struct oscillator& o)
   }
   return false;
 }
-
-
-
-
-
-
-
-
-
-

@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include "note.h"
 
-#define SAMPLE_SPEED(x) x * 4 //Il serait peut-être possible d'optimiser la vitesse des aigu ici (et recalculer les notes ainsi)
+#define SAMPLE_SPEED(x) x * 4 //Il serait peut-être possible d'optimiser la vitesse des aigu ici (et recalculer les notes ainsi) Транспозиция: число больше - выше, меньше - ниже
 #define SWEEP_SPEED(x) (1 << x) - 1
 const static int8_t SWEEP_DOWN  = 1;
 const static int8_t SWEEP_NOP   = 0;
@@ -20,6 +20,10 @@ const static uint8_t NUMBER_OF_CHANNELS   = NUMBER_OF_SQUARES
                                           + NUMBER_OF_SAWTOOTHS
                                           + NUMBER_OF_NOISES
                                           + NUMBER_OF_SAMPLES;
+
+
+
+
 
 struct oscillator
 { 
