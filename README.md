@@ -1,7 +1,9 @@
 # This is fork of [ArduinoProgrammableSoundGenerator](https://github.com/Benjamin-Lapointe-Pinel/ArduinoProgrammableSoundGenerator)
 An Arduino NES inspired multichannel sounds generator library.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=bedD4nGP4NM" target="_blank"><img src="http://img.youtube.com/vi/bedD4nGP4NM/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+<p align="center">
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=bedD4nGP4NM" target="_blank"><img src="http://img.youtube.com/vi/bedD4nGP4NM/0.jpg" alt="HEY, LISTEN!" width="480" height="360" border="10" /></a>
+</p> 
 
 # My modifications
 * the use of progmem for storing melodies has been greatly optimized; 
@@ -24,6 +26,7 @@ I recommend to use multiplatform midi editor Aria Maestosa.
 ```
 python mididump_v2.py <midi file> -old_method
 ```
+Copy array from console and insert it to melodies.h
 
 # How to use it
 Plug a speaker to pin 3, then init the sound generator in the setup function.
