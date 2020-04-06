@@ -24,7 +24,7 @@ I recommend to use multiplatform midi editor Aria Maestosa.
 
 # How to use converter script
 ```
-python mididump_v2.py <midi file> -old_method
+python mididump_v3.py <midi file> -old_method
 ```
 Copy array from console and insert it to melodies.h
 
