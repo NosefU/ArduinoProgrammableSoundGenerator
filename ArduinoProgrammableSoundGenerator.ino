@@ -94,7 +94,8 @@ void melodyExample()
    */
   
   int melody_i = 0;
-  noise.volume = 8; // default 15
+  noise.volume = 10; // last 8, default 15
+  squares[1].volume = 10;
 
   set_square_duty_cycle(squares[1], 2);
   
