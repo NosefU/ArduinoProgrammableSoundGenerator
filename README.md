@@ -13,6 +13,7 @@ An Arduino NES inspired multichannel sounds generator library.
 Besides, I wrote python script that converts specially prepared midi files to melody arrays. Unfortunately, at the moment the delays have to be selected manually.
 
 # How to prepare midi file
+Important! Set ticks per beat/PPQ to 960 or use midi file from examples as template. 
 5 simple rules:
   * one note at one time for each track. No overlaps
   * minimal note length - 1/32
