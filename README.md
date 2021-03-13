@@ -14,6 +14,7 @@ Besides, I wrote python script that converts specially prepared midi files to me
 
 # How to prepare midi file
 Important! Set ticks per beat/PPQ to 960 or use midi file from examples as template. 
+
 5 simple rules:
   * one note at one time for each track. No overlaps
   * minimal note length - 1/32
